@@ -3,7 +3,6 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 const mongoose = require("mongoose");
 
-// Connecting to MongoDB
 mongoose
     .connect(
         "mongodb+srv://yuto-isogai:a5616randr@cluster0.coij8.mongodb.net/?retryWrites=true&w=majority"
@@ -14,7 +13,7 @@ mongoose
     .catch(error => {
         console.error("Failure: Unconnected to MongoDB");
     });
-// Defining Schema and Model
+//schema
 const Schema = mongoose.Schema;
 
 const BlogSchema = new Schema({
@@ -25,12 +24,10 @@ const BlogSchema = new Schema({
 });
 const BlogModel = mongoose.model("Blog", BlogSchema);
 
-// BLOG function
 app.get("/", (req, res) => {
     res.send("こんにちは");
 });
 
-// Create blog
 app.get("/blog/create", (req, res) => {
     res.sendFile(__dirname + "/views/blogCreate.html");
 });

@@ -25,12 +25,10 @@ const BlogSchema = new Schema({
 });
 const BlogModel = mongoose.model("Blog", BlogSchema);
 
-// BLOG function
 app.get("/", (req, res) => {
     res.send("こんにちは");
 });
 
-// Create blog
 app.get("/blog/create", (req, res) => {
     res.sendFile(__dirname + "/views/blogCreate.html");
 });

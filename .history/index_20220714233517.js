@@ -54,18 +54,14 @@ app.get("/", async(req, res) => {
 // Read Single Blog
 app.get("/blog/:id", async(req, res) => {
     const singleBlog = await BlogModel.findById(req.params.id);
-    console.log("singleBlogの中身：", singleBlog);
+
     res.send("個別の記事ページ");
 });
 // Update Blog
-app.get("/blog/update/:id", async(req, res) => {
-    const singleBlog = await BlogModel.findById(req.params.id);
-    console.log("singleBlogの中身：", singleBlog);
-    res.send("個別の記事編集ページ");
-});
 // Delete Blog
 
 // Connecting to port
 app.listen(5000, () => {
     console.log("Listening on localhost port 5000");
 });
+conls

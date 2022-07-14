@@ -1,18 +1,16 @@
 const express = require("express");
 const app = express();
-app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
     res.send("こんにちは");
 });
 
-app.get("/blog/create", (req, res) => {
-    res.sendFile(__dirname + "/views/blogCreate.html");
-});
+app.get("/blog/create", (req, res) => { // 追加
+
+    }) // 追加
 
 app.post("/blog/create", (req, res) => {
-    console.log("reqの中身", req.body);
-    res.send("ブログデータを投稿しました");
+    console.log("POSTリクエストが実行されました");
 });
 
 app.listen(5000, () => {

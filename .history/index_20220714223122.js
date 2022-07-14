@@ -11,8 +11,7 @@ app.get("/blog/create", (req, res) => {
 });
 
 app.post("/blog/create", (req, res) => {
-    console.log("reqの中身", req.body);
-    res.send("ブログデータを投稿しました");
+    console.log("reqの中身", req);
 });
 
 app.listen(5000, () => {

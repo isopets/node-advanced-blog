@@ -53,9 +53,7 @@ app.get("/", async(req, res) => {
 });
 // Read Single Blog
 app.get("/blog/:id", (req, res) => {
-    console.log(req.params.id);
-    const singleBlog = BlogModel.findById(req.params.id);
-    res.send("個別の記事ページ");
+    // 追加
 });
 // Update Blog
 // Delete Blog

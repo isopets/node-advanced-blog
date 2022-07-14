@@ -54,7 +54,7 @@ app.get("/", async(req, res) => {
 // Read Single Blog
 app.get("/blog/:id", (req, res) => {
     console.log(req.params.id);
-    const singleBlog = BlogModel.findById(req.params.id);
+    const singleBlog = BlogModel.findById();
     res.send("個別の記事ページ");
 });
 // Update Blog

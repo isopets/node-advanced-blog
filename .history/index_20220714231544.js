@@ -27,6 +27,7 @@ const BlogModel = mongoose.model("Blog", BlogSchema);
 
 // BLOG function
 
+
 // Create blog
 app.get("/blog/create", (req, res) => {
     res.sendFile(__dirname + "/views/blogCreate.html");
@@ -46,17 +47,7 @@ app.post("/blog/create", (req, res) => {
 });
 
 // Read All Blogs
-app.get("/", async(req, res) => {
-    const allBlogs = await BlogModel.find();
-    console.log("allBlogの中身：", allBlogs);
-    res.send("全ブログデータを読み取りました。");
-});
 // Read Single Blog
-app.get("/blog/:id", (req, res) => {
-    console.log(req.params.id);
-    const singleBlog = BlogModel.findById(req.params.id);
-    res.send("個別の記事ページ");
-});
 // Update Blog
 // Delete Blog
 

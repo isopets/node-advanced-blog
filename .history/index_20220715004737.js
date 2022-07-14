@@ -63,6 +63,7 @@ app.get("/blog/update/:id", async(req, res) => {
     console.log("singleBlogの中身：", singleBlog);
     res.send("個別の記事編集ページ");
 });
+
 app.post("/blog/update/:id", (req, res) => {
     BlogModel.updateOne({ _id: req.params.id }, req.body).exec(error => {
         if (error) {

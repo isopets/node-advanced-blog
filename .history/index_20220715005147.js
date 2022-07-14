@@ -64,8 +64,7 @@ app.get("/blog/update/:id", async(req, res) => {
     res.send("個別の記事編集ページ");
 });
 app.post("/blog/update/:id", (req, res) => {
-    BlogModel.updateOne({ _id: req.params.id }, req.body).exec(error => {
-        if (error) {
+    BlogModel.updateOne({ _id: req.params.id }, req.body) 
             console.log("データの編集が失敗しました");
             res.send("ブログデータの編集が失敗しました");
         } else {

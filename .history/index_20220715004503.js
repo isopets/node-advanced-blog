@@ -49,7 +49,7 @@ app.post("/blog/create", (req, res) => {
 app.get("/", async(req, res) => {
     const allBlogs = await BlogModel.find();
     console.log("allBlogの中身：", allBlogs);
-    res.send("Read all blogs data");
+    res.send("全ブログデータを読み取りました。");
 });
 // Read Single Blog
 app.get("/blog/:id", async(req, res) => {
@@ -63,6 +63,8 @@ app.get("/blog/update/:id", async(req, res) => {
     console.log("singleBlogの中身：", singleBlog);
     res.send("個別の記事編集ページ");
 });
+
+// Read All Blogs
 app.post("/blog/update/:id", (req, res) => {
     BlogModel.updateOne({ _id: req.params.id }, req.body).exec(error => {
         if (error) {

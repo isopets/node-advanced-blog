@@ -51,7 +51,7 @@ app.post("/blog/create", (req, res) => {
 app.get("/", async(req, res) => {
     const allBlogs = await BlogModel.find();
     console.log("allBlogの中身:", allBlogs);
-    res.render("index", {allBlogs})
+    res.render("index")
 });
 // Read Single Blog
 app.get("/blog/:id", async(req, res) => {

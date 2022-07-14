@@ -3,7 +3,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 const mongoose = require("mongoose");
 
-app.set("view engine", "ejs");
+app.set("view engine", "ejs")
 
 // Connecting to MongoDB
 mongoose
@@ -51,13 +51,13 @@ app.post("/blog/create", (req, res) => {
 app.get("/", async(req, res) => {
     const allBlogs = await BlogModel.find();
     console.log("allBlogの中身:", allBlogs);
-    res.render("index", {allBlogs})
+    res.send("Read all blogs data");
 });
 // Read Single Blog
 app.get("/blog/:id", async(req, res) => {
     const singleBlog = await BlogModel.findById(req.params.id);
     console.log("singleBlogの中身:", singleBlog);
-    res.render("blogRead", { singleBlog });
+    res.render("blogRead")
 });
 // Update Blog
 app.get("/blog/update/:id", async(req, res) => {

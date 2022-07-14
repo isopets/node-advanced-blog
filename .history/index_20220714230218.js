@@ -16,9 +16,10 @@ mongoose
 //schema
 const Schema = mongoose.Schema;
 
-const BlogSchema = new Schema({
-    title: summary: image: textBody:
-});
+const BlogSchema = new Schema({title:      // 追加
+summary:    // 追加
+image:      // 追加
+textBody:   // 追加});
 
 app.get("/", (req, res) => {
     res.send("こんにちは");
